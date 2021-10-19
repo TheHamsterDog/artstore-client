@@ -1,0 +1,108 @@
+.navbar {
+    &:hover &-right-avatar-list {
+        opacity: 1;
+
+        transform: translate(0, 100%)
+    }
+
+    background-color: $colorBackground2;
+    padding: 1rem 4rem;
+    height: 5rem;
+    display: flex;
+    justify-content: space-between;
+    // grid-template-columns: 1fr 1fr 1fr;
+    align-items: center;
+
+    &-right {
+
+        &-avatar {
+            position: relative;
+
+
+            &-list {
+                border-radius: .5rem;
+                transition: all 0.2s;
+
+                &:hover {
+                    opacity: 1;
+                    transform: translate(0, 100%);
+                }
+
+                &-button {
+
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    // justify-content: center;
+                    // flex-direction: column;
+
+
+                    padding-bottom: 0.25rem;
+                    margin-bottom: .5rem;
+                    border-bottom: 1px solid rgba(black, 0.1);
+
+                    color: #444443 !important;
+                    text-decoration: none;
+                }
+
+                // opacity: 0;
+                position: absolute;
+                display: flex;
+                // justify-content: -end   ;
+                // align-items: flex-end;
+                flex-direction: column;
+                bottom: -1rem;
+                // height: 7.5rem;
+                padding: 1rem;
+                width: 13rem;
+                left: -7rem;
+                background-color: $colorBackground3;
+                transform: translate(-0, -50vh);
+                // display: none;
+
+            }
+        }
+
+        align-items: center;
+
+        &-search {
+            outline: none;
+            font-size: 2rem;
+            border-radius: .5rem;
+            border: 1px $colorBackground1;
+            font-family: $fontBody;
+            height: 1rem;
+            width: 30rem;
+            transition: all 0.2s;
+
+            &:focus {
+                transition: all 0.2s;
+                border-bottom: 2px solid #7B6CF9;
+                border-bottom-left-radius: 0;
+                border-bottom-right-radius: 0;
+            }
+
+            &:not(&:placeholder-shown) {
+                transition: all 0.2s;
+                border-bottom: 2px solid #7B6CF9;
+                border-bottom-left-radius: 0;
+                border-bottom-right-radius: 0;
+            }
+
+
+            padding: 2rem;
+        }
+
+        display: flex;
+        // justify-content: space-between;
+        font-size: 1.5rem;
+        font-family: $fontHeader;
+    }
+
+    &-left {
+        text-decoration: none;
+        color: $color1;
+        font-size: 3rem;
+        font-family: $fontHeader;
+    }
+}

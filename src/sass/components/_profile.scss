@@ -1,0 +1,21 @@
+.profile {
+    &-follow {
+        outline: none;
+        border-radius: .5rem;
+        padding: 1rem;
+        margin-right:6rem;
+        border: none;
+        cursor: pointer;
+        transition: all 0.2s;
+        color: #044EED;
+
+        background-color: rgba($colorBackground2, 0.7);
+        &:hover{
+            transform: scale(1.02);
+        }
+        text-transform: uppercase;
+        font-size: 1.6rem;
+        font-family: $fontHeader;
+        max-width: 25%;
+    }
+}

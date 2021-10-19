@@ -1,13 +1,358 @@
+@import url("https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap");
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  background-color: #CCDAD6;
+  color: #464B4A;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+body::-webkit-scrollbar {
+  width: 0.5rem;
+  color: black;
+  background-color: #1964a5;
+}
+body::-webkit-scrollbar-thumb {
+  color: black;
+  background-color: black;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+html {
+  font-size: 10px;
 }
+
+.snippet-art {
+  width: 70%;
+  margin: 2rem auto;
+  background-color: rgba(6, 166, 165, 0.8);
+  border-radius: 1rem;
+  font-family: "PT Sans", sans-serif !important;
+  font-size: 1.5rem;
+  padding: 3rem 3rem 0;
+}
+.snippet-art-image {
+  width: 100%;
+}
+
+.art {
+  padding: 3rem;
+  text-align: center;
+}
+.art-delete {
+  background-color: #F1F1F1;
+  font-size: 2rem !important;
+  padding: 1rem;
+  cursor: pointer;
+  border-radius: 100%;
+  left: 2rem;
+  top: 10rem;
+  position: fixed;
+}
+.art-image {
+  text-align: center;
+  max-width: 100%;
+  max-height: 30rem;
+}
+.art-description {
+  font-size: 1.6rem;
+  font-family: "PT Sans", sans-serif;
+  text-align: left;
+  padding: 3rem 0.5rem;
+  margin: 3rem 0;
+  color: #F1F1F1;
+  background-color: rgba(70, 75, 74, 0.7);
+}
+.art-rating {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  padding: 3rem;
+}
+.art-rating-up {
+  cursor: pointer;
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 3rem !important;
+}
+.art-rating-up-active {
+  color: #057A7E !important;
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 3rem !important;
+  cursor: pointer;
+}
+.art-rating-down {
+  cursor: pointer;
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 3rem !important;
+}
+.art-rating-down-active {
+  cursor: pointer;
+  color: #7e1305 !important;
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 3rem !important;
+}
+.art-rating-number {
+  margin: 0 2rem;
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 3rem;
+}
+.art-artist {
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  grid-template-columns: 1fr 1fr;
+}
+.art-artist-name {
+  font-size: 1.6rem;
+  margin-right: 3rem;
+  font-family: "PT Sans", sans-serif;
+}
+.art-artist-image {
+  width: 5rem;
+}
+
+.wallet-container {
+  padding: 3rem;
+  margin: 1rem 0;
+  color: #464B4A;
+  font-size: 1.6rem;
+  font-family: "Source Sans Pro", sans-serif !important;
+  box-shadow: 0 0 10px rgba(70, 75, 74, 0.3);
+}
+
+.alerts {
+  height: 80vh;
+  display: flex;
+  overflow: auto;
+  position: fixed;
+  left: 2rem;
+  flex-direction: column;
+  padding: 1rem;
+  top: 2rem;
+}
+.alerts::-webkit-scrollbar {
+  width: 0.5rem;
+  color: black;
+  background-color: #1964a5;
+}
+.alerts::-webkit-scrollbar-thumb {
+  color: black;
+  background-color: black;
+}
+
+.auth {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.auth-input {
+  padding: 1rem;
+  height: 3rem;
+  font-size: 1.7rem;
+  width: 80%;
+  font-family: "PT Sans", sans-serif;
+  margin: 3rem auto;
+  outline: none;
+  border: none;
+  border-radius: 0.5rem;
+  color: #fff;
+  background-color: rgba(8, 111, 161, 0.6);
+}
+.auth-input-image {
+  min-height: 4rem;
+}
+.auth-input-display {
+  text-align: center;
+  width: 100%;
+}
+.auth-input-display img {
+  max-height: 10rem;
+  max-width: 70%;
+}
+.auth-input::placeholder {
+  color: #fff;
+}
+.auth-button {
+  transition: 0.2s;
+  cursor: pointer;
+  border: none;
+  background-color: #086FA1;
+  outline: none;
+  border-radius: 0.5rem;
+  font-size: 2rem;
+  color: #fff;
+  font-family: "Source Sans Pro", sans-serif;
+  font-weight: 900;
+  padding: 1rem;
+  width: 30rem;
+  margin: 3rem;
+}
+.auth-button:hover {
+  transform: scale(1.025);
+}
+
+.home-header {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 10rem;
+  column-gap: 10rem;
+  min-height: calc(100vh - 9rem);
+  font-family: "Source Sans Pro", sans-serif;
+  background-size: cover;
+  background-image: linear-gradient(to right, rgba(183, 228, 113, 0.2), rgba(184, 204, 152, 0.3)), url("https://images.unsplash.com/photo-1499781350541-7783f6c6a0c8?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=945&q=80");
+}
+.home-header-content {
+  height: calc(100% - 5rem);
+  margin: 5rem 0;
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: column;
+  padding: 1rem 3rem;
+  background-color: rgba(230, 243, 210, 0.4);
+}
+.home-header-content-title {
+  margin: 0;
+  color: #2d2c96 !important;
+  text-transform: uppercase;
+  font-size: 3rem;
+}
+.home-header-content-artwork {
+  height: 80%;
+  border-radius: 0.5rem;
+  box-shadow: 0 0 4rem rgba(43, 255, 0, 0.3);
+}
+.home-header-content-artwork-infinite {
+  overflow: auto;
+  max-height: 70vh;
+}
+.home-header-content-artwork-infinite::-webkit-scrollbar {
+  width: 0.5rem;
+  color: black;
+  background-color: #1964a5;
+}
+.home-header-content-artwork-infinite::-webkit-scrollbar-thumb {
+  color: black;
+  background-color: black;
+}
+.home-header-text {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+.home-header-text-heading {
+  margin: 0;
+  color: #6169B4 !important;
+  text-transform: uppercase;
+  font-size: 7rem;
+}
+.home-header-text-paragraph {
+  background-image: linear-gradient(to right, #000000, #B46361, #0000ff);
+  margin: 0;
+  -webkit-background-clip: text;
+  color: transparent;
+  font-size: 3rem;
+}
+
+.navbar {
+  background-color: #9de98e;
+  padding: 1rem 4rem;
+  height: 5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.navbar:hover .navbar-right-avatar-list {
+  opacity: 1;
+  transform: translate(0, 100%);
+}
+.navbar-right {
+  align-items: center;
+  display: flex;
+  font-size: 1.5rem;
+  font-family: "Source Sans Pro", sans-serif;
+}
+.navbar-right-avatar {
+  position: relative;
+}
+.navbar-right-avatar-list {
+  border-radius: 0.5rem;
+  transition: all 0.2s;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  bottom: -1rem;
+  padding: 1rem;
+  width: 13rem;
+  left: -7rem;
+  background-color: #F1F1F1;
+  transform: translate(0, -50vh);
+}
+.navbar-right-avatar-list:hover {
+  opacity: 1;
+  transform: translate(0, 100%);
+}
+.navbar-right-avatar-list-button {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 0.25rem;
+  margin-bottom: 0.5rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  color: #444443 !important;
+  text-decoration: none;
+}
+.navbar-right-search {
+  outline: none;
+  font-size: 2rem;
+  border-radius: 0.5rem;
+  border: 1px #CCDAD6;
+  font-family: "PT Sans", sans-serif;
+  height: 1rem;
+  width: 30rem;
+  transition: all 0.2s;
+  padding: 2rem;
+}
+.navbar-right-search:focus {
+  transition: all 0.2s;
+  border-bottom: 2px solid #7B6CF9;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.navbar-right-search:not(.navbar-right-search:placeholder-shown) {
+  transition: all 0.2s;
+  border-bottom: 2px solid #7B6CF9;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.navbar-left {
+  text-decoration: none;
+  color: #464B4A;
+  font-size: 3rem;
+  font-family: "Source Sans Pro", sans-serif;
+}
+
+.profile-follow {
+  outline: none;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  margin-right: 6rem;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s;
+  color: #044EED;
+  background-color: rgba(157, 233, 142, 0.7);
+  text-transform: uppercase;
+  font-size: 1.6rem;
+  font-family: "Source Sans Pro", sans-serif;
+  max-width: 25%;
+}
+.profile-follow:hover {
+  transform: scale(1.02);
+}
+
+/*# sourceMappingURL=index.css.map */

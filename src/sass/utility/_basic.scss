@@ -1,0 +1,25 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: $colorBackground1;
+    color: $color1;
+    overflow-x: hidden;
+    &::-webkit-scrollbar {
+        width: .5rem;
+        color: black;
+
+        &-thumb {
+            color: black;
+            background-color: black;
+
+        }
+
+        background-color: rgb(25, 100, 165);
+    }
+
+    overflow-y: auto;
+}
+
+html {
+    font-size: 10px;
+}
