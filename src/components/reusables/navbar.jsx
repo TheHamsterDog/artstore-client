@@ -37,7 +37,7 @@ class Navbar extends Component {
                     {
                         this.props.loggedIn ?
                             <div className="navbar-right-avatar-list">
-                                <Link to="/profile" className="navbar-right-avatar-list-button">
+                                <Link to={"/author/"+this.props.user._id} className="navbar-right-avatar-list-button">
                                     <AccountBoxIcon className="navbar-right-avatar-list-button-icon" /> <span className="navbar-right-avatar-list-button-text">My Profile</span>
                                 </Link>
                          
